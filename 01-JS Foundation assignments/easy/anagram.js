@@ -4,7 +4,7 @@
   - A word, phrase, or name formed by rearranging the letters of another, such as spar, formed from rasp.
 */
 /*
-Example of anagram is Mary -> Army. Here 
+Example of anagram is Mary -> Army. Here  helllo
 */
 
 function isAnagram(str1, str2) {
