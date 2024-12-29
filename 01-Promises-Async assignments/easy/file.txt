@@ -1,0 +1,1 @@
+Inserting the data using writeFile method of fs library
