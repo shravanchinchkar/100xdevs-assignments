@@ -46,22 +46,19 @@ app.get("/files/:filename", (req, res) => {
     if (err) {
       return res.status(404).send("File not found");
     }
-    else if(data.length===0){
-      return res.status(404).json({
-        msg:`${req.params.filename} does not have any content`
-      })
-    } 
-    else {
-      return res.status(200).send(data);
+    if (!data || data.length === 0) {
+      return res.status(204).send("File is empty");
     }
+    return res.status(200).send(data);
   });
 });
 
 //for any other routes not defined execute the following code
 app.use((req, res) => {
-  res.status(404).send("Route not found");
+  if (!res.headersSent) {
+    res.status(404).send("Route not found");
+  }
 });
 
-app.listen(3000);
 
 module.exports = app;

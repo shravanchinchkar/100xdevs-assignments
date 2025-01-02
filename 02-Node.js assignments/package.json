@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "test-fileServer": "npx jest ./tests/fileServer.test.js",
-    "test-todoServer": "./node_modules/jest/bin/jest.js ./tests/todoServer.test.js"
+    "test-todoServer": "npx jest ./tests/todoServer.test.js"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +19,8 @@
     "testTimeout": 10000
   },
   "dependencies": {
+    "body-parser": "^1.20.3",
     "express": "^4.21.2",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.1"
   }
 }

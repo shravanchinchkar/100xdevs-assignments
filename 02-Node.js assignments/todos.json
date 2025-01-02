@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "title": "New Todo",
+    "description": "A new todo item",
+    "id": 775153
+  },
+  {
+    "title": "New Todo",
+    "description": "A new todo item",
+    "id": 429389
+  },
+  {
+    "title": "New Todo",
+    "description": "A new todo item",
+    "id": 572315
+  }
+]

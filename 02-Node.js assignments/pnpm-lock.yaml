@@ -8,11 +8,14 @@ importers:
 
   .:
     dependencies:
+      body-parser:
+        specifier: ^1.20.3
+        version: 1.20.3
       express:
         specifier: ^4.21.2
         version: 4.21.2
       uuid:
-        specifier: ^9.0.0
+        specifier: ^9.0.1
         version: 9.0.1
     devDependencies:
       jest:
