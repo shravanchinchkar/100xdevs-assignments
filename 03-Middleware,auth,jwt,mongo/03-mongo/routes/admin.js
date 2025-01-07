@@ -49,7 +49,6 @@ router.post("/courses", adminMiddleware, async (req, res) => {
       price: course.price,
       image: course.image,
     });
-    console.log("Course created Response:-",createResponse)
     if (createResponse) {
       return res.json({
         msg: "Course created successfully",
