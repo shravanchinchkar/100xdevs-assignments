@@ -16,7 +16,7 @@ const UserSchema = new mongoose.Schema({
   // Schema definition here
   username: String,
   password: String,
-  purchaseCourses: [
+  purchasedCourses: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Course",
@@ -26,10 +26,10 @@ const UserSchema = new mongoose.Schema({
 
 const CourseSchema = new mongoose.Schema({
   // Schema definition here
-  title:String,
-  description:String,
-  price:Number,
-  image:String
+  title: String,
+  description: String,
+  price: Number,
+  image: String,
 });
 
 const Admin = mongoose.model("Admin", AdminSchema);

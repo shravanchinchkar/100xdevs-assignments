@@ -6,9 +6,6 @@ function userMiddleware(req, res, next) {
     const mainString=token.split(" ");
     const jwtToken=mainString[1]
     const jwtVerify=jwt.verify(jwtToken,JWT_SECRET);
-
-    console.log("verify",jwtVerify)
-
     if(jwtVerify.username){
         req.username=jwtVerify.username;
         next();
