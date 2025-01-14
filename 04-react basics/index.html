@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -8,7 +9,23 @@
     let oldTodoState = [];
 
     function addTodoToDom() {
-      
+      for(let i=0;i<todoState.length;i++){
+        oldTodoState.push(todoState[i]);//push the new todos in oldstate todos for further comparison
+
+        console.log("todos:",todoState[i])//iterate over todosState
+
+        console.log("oldTodos:",oldTodoState[i])//
+
+        const child=document.createElement("div");
+        const firstChild=document.createElement("h1");
+        firstChild.innerHTML=todoState[i].title;
+        const secondChild=document.createElement("h3");
+        secondChild.innerHTML=todoState[i].description
+        child.appendChild(firstChild)
+        child.appendChild(secondChild)
+        const parent=document.getElementById("todos")
+        parent.appendChild(child);
+      } 
     }
 
     function removeTodoFromDom(todo) {
@@ -20,6 +37,15 @@
     }
 
     function updateState(newTodos) {
+      console.log("updateState")
+      if(oldTodoState.length===0){
+        console.log("in if")
+        addTodoToDom();
+      }
+      else{
+        console.log("now in else")
+        console.log("else old:",oldTodoState)
+      }
       // calculate the diff b/w newTodos and oldTodos.
       // More specifically, find out what todos are - 
       // 1. added
@@ -31,12 +57,15 @@
       // calculate these 3 arrays
       // call addTodo, removeTodo, updateTodo functions on each of the
       // elements
-      oldTodoState = newTodos;
+      // oldTodoState = newTodos;
     }
 
     function addTodo() {
+      console.log("addTodo")
       const title = document.getElementById("title").value;
       const description = document.getElementById("description").value;
+
+      // Push the new todo in "todoState" array of object
       todoState.push({
         title: title,
         description: description,
